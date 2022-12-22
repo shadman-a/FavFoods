@@ -66,8 +66,6 @@ struct HomeView: View {
             request.httpMethod = "GET"
             request.setValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("Bearer jrbL4MFwiYozoWS6K8DavSqnRCotEX57RZdARSA-5tQV15qUVIprv7KxvLJQ4cI1i0MmBQfwJRDgf3femSZv-3Z0L3OAgAPlvWaDfaePKCpL9_GXLdGBAh_h8NmcY3Yx", forHTTPHeaderField: "Authorization")
-            
-            
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 guard let data = data else { return }
                 let user = try! JSONDecoder().decode([Business].self, from: data)

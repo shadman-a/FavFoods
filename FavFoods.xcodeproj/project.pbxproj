@@ -13,6 +13,11 @@
 		F0348728295130DF00450FB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0348727295130DF00450FB5 /* Preview Assets.xcassets */; };
 		F034872A295130DF00450FB5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0348729295130DF00450FB5 /* Persistence.swift */; };
 		F034872D295130DF00450FB5 /* FavFoods.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F034872B295130DF00450FB5 /* FavFoods.xcdatamodeld */; };
+		F0348735295180B100450FB5 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0348734295180B100450FB5 /* FeaturedView.swift */; };
+		F0348737295180E200450FB5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0348736295180E200450FB5 /* MapView.swift */; };
+		F034FB5029522036009496EC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034FB4F29522036009496EC /* HomeView.swift */; };
+		F034FB5529523340009496EC /*  Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034FB5429523340009496EC /*  Yelp.swift */; };
+		F034FB5829534FE1009496EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034FB5729534FE1009496EC /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		F0348729295130DF00450FB5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F034872C295130DF00450FB5 /* FavFoods.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavFoods.xcdatamodel; sourceTree = "<group>"; };
 		F034872E295130DF00450FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0348734295180B100450FB5 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
+		F0348736295180E200450FB5 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F034FB4F29522036009496EC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F034FB5429523340009496EC /*  Yelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Yelp.swift"; sourceTree = "<group>"; };
+		F034FB5729534FE1009496EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,10 @@
 		F034871F295130DE00450FB5 /* FavFoods */ = {
 			isa = PBXGroup;
 			children = (
+				F08A7B482953B6E900CC847E /* Service */,
+				F08A7B472953B6DF00CC847E /* View */,
+				F034FB532952331E009496EC /* Model */,
 				F0348720295130DE00450FB5 /* FavFoodsApp.swift */,
-				F0348722295130DE00450FB5 /* ContentView.swift */,
 				F0348724295130DF00450FB5 /* Assets.xcassets */,
 				F0348729295130DF00450FB5 /* Persistence.swift */,
 				F034872E295130DF00450FB5 /* Info.plist */,
@@ -73,6 +85,33 @@
 				F0348727295130DF00450FB5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F034FB532952331E009496EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F034FB5429523340009496EC /*  Yelp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F08A7B472953B6DF00CC847E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0348722295130DE00450FB5 /* ContentView.swift */,
+				F034FB4F29522036009496EC /* HomeView.swift */,
+				F0348736295180E200450FB5 /* MapView.swift */,
+				F0348734295180B100450FB5 /* FeaturedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F08A7B482953B6E900CC847E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F034FB5729534FE1009496EC /* APIManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F034872A295130DF00450FB5 /* Persistence.swift in Sources */,
+				F034FB5029522036009496EC /* HomeView.swift in Sources */,
+				F0348737295180E200450FB5 /* MapView.swift in Sources */,
+				F034FB5829534FE1009496EC /* APIManager.swift in Sources */,
 				F034872D295130DF00450FB5 /* FavFoods.xcdatamodeld in Sources */,
 				F0348723295130DE00450FB5 /* ContentView.swift in Sources */,
 				F0348721295130DE00450FB5 /* FavFoodsApp.swift in Sources */,
+				F0348735295180B100450FB5 /* FeaturedView.swift in Sources */,
+				F034FB5529523340009496EC /*  Yelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

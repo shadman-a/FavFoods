@@ -1,20 +1,23 @@
 //
-//  ContentView.swift
+//  SwiftUIView.swift
 //  FavFoods
 //
-//  Created by Shadman Ahmed on 12/19/22.
+//  Created by Shadman Ahmed on 12/20/22.
 //
+
+import SwiftUI
 
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct FeaturedView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
 
     var body: some View {
         NavigationView {
@@ -28,6 +31,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .navigationTitle("Featured")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -81,8 +85,10 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct FeatuedView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.colorScheme, .dark)
     }
 }
+

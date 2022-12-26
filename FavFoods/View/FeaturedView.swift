@@ -11,6 +11,9 @@ import SwiftUI
 import CoreData
 
 struct FeaturedView: View {
+    
+    @State private var showingSheet = false
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -43,14 +46,16 @@ struct FeaturedView: View {
                 }
             }
             Text("Select an item")
+        } .sheet(isPresented: $showingSheet) {
+            SheetView()
         }
     }
 
     private func addItem() {
         withAnimation {
+            showingSheet.toggle()
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
             do {
                 try viewContext.save()
             } catch {
@@ -89,6 +94,19 @@ struct FeatuedView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environment(\.colorScheme, .dark)
+    }
+}
+
+struct SheetView: View {
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        Button("Press to dismiss") {
+            dismiss()
+        }
+        .font(.title)
+        .padding()
+        .background(.black)
     }
 }
 

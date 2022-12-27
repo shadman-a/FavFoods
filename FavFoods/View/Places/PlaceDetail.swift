@@ -29,7 +29,7 @@ struct PlaceDetail: View {
                 }
 
                 HStack {
-                    Text(place.price)
+                    Text(place.price ?? "")
                     Spacer()
                     Text(place.displayPhone)
                 }

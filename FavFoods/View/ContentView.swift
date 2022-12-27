@@ -26,7 +26,8 @@ struct ContentView: View {
                     Label("Home", systemImage: "fork.knife")
                 }
                 .tag(Tab.featured)
-            MapView(coordinate: CLLocationCoordinate2D(latitude:  40.730_610, longitude: -73.935_242))
+//            MapView(coordinate: CLLocationCoordinate2D(latitude:  40.730_610, longitude: -73.935_242))
+            MapUIView()
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }

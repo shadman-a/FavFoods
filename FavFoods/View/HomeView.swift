@@ -6,37 +6,61 @@
 //
 
 import SwiftUI
+import CoreLocation
+import CoreLocationUI
 
 
 struct HomeView: View{
     @EnvironmentObject var apiManager: APIManager
-    @State private var searchText = ""
+    @State public var searchText = ""
+    @StateObject var locationManager = LocationManager()
+
+   
+  
+
     
     var body: some View {
         NavigationView {
             List {
+                if let location = locationManager.location {
+                    Text("**Current location:** \(location.latitude), \(location.longitude)")
+                }
+
                 ForEach(apiManager.places) { place in
                     NavigationLink(destination: PlaceDetail(place: place)) {
                         PlaceRow(place: place)
                     }
                 }
+                   
+                }
+                 
+//            List {
+//
+//            }
+            .navigationTitle("Welcome")
+            .searchable(text: $searchText)
+            .toolbar {
+                LocationButton {
+                    locationManager.requestLocation()
+                }
+                .symbolVariant(.circle)
+                .labelStyle(.iconOnly)
+                Button {
+                    print("hello")
+                    
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+                
             }
-                    .navigationTitle("Welcome")
-                    .searchable(text: $searchText)
-                    .toolbar {
-                        Button {
-                            self.loopnprint()
-                        } label: {
-                            Label("User Profile", systemImage: "person.crop.circle")
-                        }
-                    }
-            
+          
+                
             }
         }
         
-    func loopnprint() {
-        print("signed in")
+        
     }
         
-}
+    
+    
 
